@@ -1,0 +1,11 @@
+Started on Feb 21, 2023, 9:52:00 AM
+Using strategy: Default
+The recommended git tool is: NONE
+No credentials specified
+ > git --version # timeout=10
+ > git --version # 'git version 2.30.2'
+ > git ls-remote -h -- http://so-gitea:3000/oliversommer/tesrepo.git # timeout=10
+Found 1 remote heads on http://so-gitea:3000/oliversommer/tesrepo.git
+[poll] Latest remote head revision on refs/heads/main is: 64d7c71b30319040a723a49a93808dc495d23304
+Done. Took 0.17 sec
+Changes found

@@ -1,0 +1,22 @@
+Started by an SCM change
+Running as SYSTEM
+Building in workspace /var/jenkins_home/jobs/gitea-build/workspace
+The recommended git tool is: NONE
+No credentials specified
+Cloning the remote Git repository
+Cloning repository http://so-gitea:3000/oliversommer/tesrepo.git
+ > git init /var/jenkins_home/jobs/gitea-build/workspace # timeout=10
+Fetching upstream changes from http://so-gitea:3000/oliversommer/tesrepo.git
+ > git --version # timeout=10
+ > git --version # 'git version 2.30.2'
+ > git fetch --tags --force --progress -- http://so-gitea:3000/oliversommer/tesrepo.git +refs/heads/*:refs/remotes/origin/* # timeout=10
+ > git config remote.origin.url http://so-gitea:3000/oliversommer/tesrepo.git # timeout=10
+ > git config --add remote.origin.fetch +refs/heads/*:refs/remotes/origin/* # timeout=10
+Avoid second fetch
+ > git rev-parse refs/remotes/origin/main^{commit} # timeout=10
+Checking out Revision 64d7c71b30319040a723a49a93808dc495d23304 (refs/remotes/origin/main)
+ > git config core.sparsecheckout # timeout=10
+ > git checkout -f 64d7c71b30319040a723a49a93808dc495d23304 # timeout=10
+Commit message: "Initial commit"
+First time build. Skipping changelog.
+Finished: SUCCESS

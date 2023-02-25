@@ -1,0 +1,19 @@
+Started by an SCM change
+Running as SYSTEM
+Building in workspace /var/jenkins_home/jobs/gitea-build/workspace
+The recommended git tool is: NONE
+No credentials specified
+ > git rev-parse --resolve-git-dir /var/jenkins_home/jobs/gitea-build/workspace/.git # timeout=10
+Fetching changes from the remote Git repository
+ > git config remote.origin.url http://so-gitea:3000/oliversommer/testrepo.git # timeout=10
+Fetching upstream changes from http://so-gitea:3000/oliversommer/testrepo.git
+ > git --version # timeout=10
+ > git --version # 'git version 2.30.2'
+ > git fetch --tags --force --progress -- http://so-gitea:3000/oliversommer/testrepo.git +refs/heads/*:refs/remotes/origin/* # timeout=10
+ > git rev-parse refs/remotes/origin/main^{commit} # timeout=10
+Checking out Revision 884e456413952189780ef520bb887dd4b62d577b (refs/remotes/origin/main)
+ > git config core.sparsecheckout # timeout=10
+ > git checkout -f 884e456413952189780ef520bb887dd4b62d577b # timeout=10
+Commit message: "Empty commit"
+First time build. Skipping changelog.
+Finished: SUCCESS

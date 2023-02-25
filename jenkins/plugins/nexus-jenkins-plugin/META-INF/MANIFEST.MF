@@ -1,0 +1,25 @@
+Manifest-Version: 1.0
+Created-By: Maven Archiver 3.6.0
+Build-Jdk-Spec: 11
+Specification-Title: Nexus Platform Plugin
+Specification-Version: 3.16
+Implementation-Title: Nexus Platform Plugin
+Implementation-Version: 3.16.478.v41ee37380162
+Group-Id: org.sonatype.nexus.ci
+Short-Name: nexus-jenkins-plugin
+Long-Name: Nexus Platform Plugin
+Url: https://github.com/jenkinsci/nexus-platform-plugin
+Plugin-Version: 3.16.478.v41ee37380162
+Hudson-Version: 2.303.3
+Jenkins-Version: 2.303.3
+Mask-Classes: com.fasterxml.jackson.             org.cyclonedx.         
+     org.codehaus.stax2.             com.ctc.wstx.             org.objec
+ tweb.asm.             org.antlr.v4.
+Plugin-Dependencies: workflow-api:1144.v61c3180fa_03f,bouncycastle-api:2
+ .25,credentials:2.6.1.1,plain-credentials:1.8,structs:318.va_f3ccb_729b
+ _71
+Plugin-Developers: Sonatype, Inc.:whyjustin:
+Plugin-License-Name: ASL2
+Plugin-License-Url: https://opensource.org/licenses/Apache-2.0
+Plugin-ScmUrl: https://github.com/jenkinsci/nexus-platform-plugin
+

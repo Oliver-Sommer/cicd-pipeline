@@ -1,0 +1,25 @@
+Manifest-Version: 1.0
+Archiver-Version: Plexus Archiver
+Created-By: Apache Maven
+Built-By: runner
+Build-Jdk: 1.8.0_322
+Extension-Name: gitea-checks
+Specification-Title: Allows users to publish Gitea commit checks
+Implementation-Title: gitea-checks
+Implementation-Version: 449.v0672c320ee47
+Group-Id: io.jenkins.plugins
+Short-Name: gitea-checks
+Long-Name: Gitea Checks plugin
+Url: https://github.com/jenkinsci/gitea-checks-plugin
+Minimum-Java-Version: 1.8
+Plugin-Version: 449.v0672c320ee47
+Hudson-Version: 2.204.6
+Jenkins-Version: 2.204.6
+Plugin-Dependencies: checks-api:1.5.0,plugin-util-api:1.7.1,workflow-c
+ ps:2.85,workflow-job:2.40,gitea:1.2.1
+Plugin-Developers: Kezhi Xiong:xiongkezhi:august.xkz@gmail.com,Florin 
+ Hillebrand:flozzone:flozzone@gmail.com
+Plugin-License-Name: MIT License
+Plugin-License-Url: https://opensource.org/licenses/MIT
+Plugin-ScmUrl: https://github.com/jenkinsci/gitea-checks-plugin
+

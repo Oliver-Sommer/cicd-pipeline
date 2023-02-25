@@ -1,0 +1,76 @@
+version: "3"
+
+networks:
+  so-network:
+    external: false
+
+services:
+  so-gitea:
+    image: gitea/gitea:1.18.0
+    environment:
+      - USER_UID=1000
+      - USER_GID=1000
+      - GITEA__database__DB_TYPE=postgres
+      - GITEA__database__HOST=so-db:5432
+      - GITEA__database__NAME=gitea
+      - GITEA__database__USER=gitea
+      - GITEA__database__PASSWD=gitea
+    restart: unless-stopped
+    ports:
+      - 3000:3000
+      - 222:22
+    networks:
+      - so-network
+    volumes:
+      - ./gitea:/data
+      - /etc/timezone:/etc/timezone:ro
+      - /etc/localtime:/etc/localtime:ro
+    depends_on:
+      - so-db
+
+  so-db:
+    image: postgres:14
+    restart: unless-stopped
+    environment:
+      - POSTGRES_USER=gitea
+      - POSTGRES_PASSWORD=gitea
+      - POSTGRES_DB=gitea
+    networks:
+      - so-network
+    volumes:
+      - ./postgres:/var/lib/postgresql/data
+
+  so-jenkins:
+    image: jenkins/jenkins:lts
+    restart: unless-stopped
+    ports:
+      - 8080:8080
+      - 50000:50000
+    networks:
+      - so-network
+    volumes:
+      - ./jenkins:/var/jenkins_home
+#      - ./configs/jenkins-hosts:/etc/hosts
+      - /etc/timezone:/etc/timezone:ro
+      - /etc/localtime:/etc/localtime:ro
+
+  so-nginx:
+    image: nginx:1.23.3
+    restart: unless-stopped
+    ports:
+      - 80:80
+      - 443:443
+    networks:
+      - so-network
+    volumes:
+      - ./configs/nginx.conf:/etc/nginx/nginx.conf
+#      - /home/ubuntu/ssl:/ssl/
+
+  so-nexus:
+    image: sonatype/nexus3:3.46.0
+    ports:
+      - 10680:8081
+    networks:
+      - so-network
+    volumes:
+      - ./nexus:/nexus-data
